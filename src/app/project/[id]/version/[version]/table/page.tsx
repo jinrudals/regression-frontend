@@ -2,6 +2,8 @@ import { api } from "@/lib/authenticate/bare";
 import { TestcaseType } from "@/types";
 import { Client } from "./client";
 
+import { unstable_noStore as noStore } from "next/cache";
+
 export default async function Page({
   params: { id, version },
 }: {
@@ -10,6 +12,7 @@ export default async function Page({
     version: string;
   };
 }) {
+  noStore();
   const itemsPerPage = 10;
   const response: {
     results: TestcaseType[];

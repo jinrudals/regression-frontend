@@ -9,7 +9,6 @@ const handleRefresh = async () => {
 };
 
 export const api = () => {
-  wretch().url("http").query({ a: 1, b: 1 });
   return wretch(process.env.NEXT_PUBLIC_BACKEND_URL)
     .auth(`Bearer ${cookies().get("access")?.value}`)
     .catcher(401, async (error: WretchError, request: Wretch) => {
