@@ -79,6 +79,7 @@ export default function SnapshotChart({ data }: { data: SnapshotType[] }) {
       {chartData && (
         <Bar
           width="100%"
+          aria-label="snapshot-chart"
           height="37%"
           data={chartData}
           options={{

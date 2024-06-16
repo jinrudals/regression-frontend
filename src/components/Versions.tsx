@@ -7,9 +7,9 @@ export default function Version({
   data: VersionType;
 }) {
   return (
-    <Link href={`/project/${project}/version/${name}`}>
+    <Link href={`/dv/regression/project/${project}/version/${name}`}>
       <Card className="min-w-[400px]">
-        <CardHeader> {name} </CardHeader>
+        {/* <CardHeader> {name} </CardHeader> */}
         <CardBody>
           <p> {name} </p>
         </CardBody>

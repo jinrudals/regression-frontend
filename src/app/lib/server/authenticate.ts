@@ -10,6 +10,8 @@ const handleRefresh = async () => {
     access: string;
   };
   cookies().set("access", response.access);
+
+  console.log("Access done?");
   return response;
 };
 
@@ -18,10 +20,11 @@ export async function api() {
     .auth(`Bearer ${cookies().get("access")?.value}`)
     .catcher(401, async (error: WretchError, request: Wretch) => {
       try {
-        await handleRefresh();
+        const rep = await handleRefresh();
         const response = request
           .auth(`Bearer  ${cookies().get("access")?.value}`)
           .fetch();
+        console.log(response);
         return response;
       } catch (error) {}
     });

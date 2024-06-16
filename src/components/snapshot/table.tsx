@@ -15,7 +15,7 @@ import { useState } from "react";
 export function SnapshotTable({ data }: { data: SnapshotType[] }) {
   return (
     <>
-      <Table>
+      <Table aria-label="snpashot-table">
         <TableHeader>
           <TableColumn>Date</TableColumn>
           <TableColumn>Version</TableColumn>

@@ -14,9 +14,6 @@ import {
 import { api as internal } from "@/lib/authenticate/bare";
 import { FormEvent, useState, useEffect } from "react";
 import { GroupType } from "@/types";
-import wretch, { Wretch, WretchError } from "wretch";
-import { api } from "@/lib/authenticate/client";
-import Cookies from "js-cookie";
 
 export function TestcaseModal({ project }: { project: number }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -34,6 +31,7 @@ export function TestcaseModal({ project }: { project: number }) {
       // Fetch group data from the server when the modal is opened
       fetchGroupData();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen]);
 
   async function fetchGroupData() {

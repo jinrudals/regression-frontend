@@ -10,7 +10,7 @@ import {
 
 export function Project({ data: { id, name, url } }: { data: ProjectProp }) {
   const answer = (
-    <Link href={`/project/${id}`}>
+    <Link href={`/dv/regression/project/${id}`}>
       <Card className="min-w-[400px]">
         <CardHeader className="flex gap-3"> {id} </CardHeader>
         <Divider />

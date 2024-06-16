@@ -1,16 +1,16 @@
-import { ProjectProp } from "@/types";
-import { api } from "@/lib/authenticate/bare";
-import { Project } from "@/components/Project";
+import { Link } from "@nextui-org/react";
+
 export default async function Home() {
-  const resp = api.get("/api/project/");
-  const temp: ProjectProp[] = await resp.json();
   return (
     <>
-      <main>
-        <section id="container" className="flex gap-4 px-5 pt-2">
-          {temp.map((each) => {
-            return <Project key={each.id} data={each} />;
-          })}
+      <main className="flex justify-center items-center h-screen">
+        <section id="container" className="flex flex-col gap-4 px-5 pt-2">
+          <div id="block" className="flex flex-col items-center">
+            <div id="content" className="text-center">
+              This is the main page for regression.
+            </div>
+            <Link href="/dv/regression/project">Project</Link>
+          </div>
         </section>
       </main>
     </>
